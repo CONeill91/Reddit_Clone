@@ -28,9 +28,6 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         final TextView mTextView = (TextView) findViewById(R.id.text);
 
-        // Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(this);
-
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, REDDIT_URL,
                 new Response.Listener<String>() {
@@ -44,8 +41,8 @@ public class MainActivity extends ActionBarActivity {
                 mTextView.setText("That didn't work!");
             }
         });
-// Add the request to the RequestQueue.
-        queue.add(stringRequest);
+        // Add the request to the RequestQueue.
+        ConnectionManager.getInstance(this).add(stringRequest);
 
 
 
