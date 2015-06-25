@@ -11,17 +11,17 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
 
-    private static final String TEXT_TYPE = "TEXT";
+    private static final String TEXT_TYPE = " TEXT";
     private static final String INTEGER_TYPE = "INTEGER";
+    private static final String COMMA = ", ";
 
 
     /*DB CREATE TABLE SENTENCE*/
-    private static final String CREATE_POST_TABLE = "CREATE TABLE "
+    private static final String CREATE_POST_TABLE = "CREATE TABLE IF NOT EXISTS "
             + DatabaseContract.postTable.TABLE_NAME + " ("
-            + DatabaseContract.postTable.TABLE_NAME
-            + DatabaseContract.postTable.TITLE + TEXT_TYPE + ", "
-            + DatabaseContract.postTable.LINK + TEXT_TYPE + ", "
-            + DatabaseContract.postTable.IMAGELINK + TEXT_TYPE + " )";
+            + DatabaseContract.postTable.TITLE + TEXT_TYPE + COMMA
+            + DatabaseContract.postTable.LINK + TEXT_TYPE + COMMA
+            + DatabaseContract.postTable.IMAGELINK + TEXT_TYPE + ")";
 
     /*DB DROP SENTENCE*/
     private static final String DROP_POST_TABLE = "DROP TABLE IF EXISTS " + DatabaseContract.postTable.TABLE_NAME;

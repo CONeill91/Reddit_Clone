@@ -18,10 +18,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+import com.naildev.redditclone.database.DatabaseAccessObject;
 import com.naildev.redditclone.model.Listing;
 import com.naildev.redditclone.model.Post;
 
 import java.io.IOException;
+import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -46,8 +48,10 @@ public class MainActivity extends ActionBarActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                       Listing listing = new Gson().fromJson(response, Listing.class);
+                        Listing listing = new Gson().fromJson(response, Listing.class);
+                        List<Post> postList = listing.getPostList();
                         RedditAdapter adapter = new RedditAdapter(listing.getPostList());
+                        DatabaseAccessObject.getInstance().storePosts(MainActivity.this, postList);
                         recyclerView.setAdapter(adapter);
 
                     }
