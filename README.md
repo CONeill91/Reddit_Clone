@@ -14,6 +14,7 @@ Version 1.0
 
 ### Contribution guidelines ###
 *Individual Project
+
 * Writing tests - Be my guest!
 
 ### Who do I talk to? ###
