@@ -9,14 +9,3 @@ This README would normally document whatever steps are necessary to get your app
 Version 1.0
 
 
-### How do I get set up? ###
-*Download from ** Play Link **
-
-### Contribution guidelines ###
-*Individual Project
-
-* Writing tests - Be my guest!
-
-### Who do I talk to? ###
-
-* conor.oneill63@mail.dcu.ie
